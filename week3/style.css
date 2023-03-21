@@ -23,15 +23,30 @@ h1 {
   text-shadow: 3px 3px 1px black;
 }
 
+strike {
+  margin-right: 5px;
+}
+
 p,
 li {
   line-height: 2;
   letter-spacing: 1px;
 }
 
+div {
+  display: flex;
+  align-items: baseline;
+}
+
 p.bold {
   font-weight: 600;
   font-size: 1.2rem;
+}
+
+p.highlight {
+  font-weight: bold;
+  font-size: 1.7rem;
+  color: #c00;
 }
 
 #warning {
