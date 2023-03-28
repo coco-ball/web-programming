@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Sample</title>
+    <script>
+      window.onload = function () {
+        // DOM 조작하기
+        const myParagraph = document.getElementById("my-paragraph");
+
+        myParagraph.innerHTML = "This is a new paragraph.";
+        myParagraph.style.color = "red";
+
+        // 이벤트 처리 방법
+        const myButton = document.getElementById("my-button");
+
+        myButton.addEventListener("click", function () {
+          const actionStatus = document.getElementById("action-status");
+
+          let clickStatus = document.createElement("div");
+          clickStatus.innerHTML = "Button clicked!";
+          actionStatus.appendChild(clickStatus);
+        });
+
+        const myDeleteButton = document.getElementById("my-delete-button");
+
+        myDeleteButton.addEventListener("click", function () {
+          let clickStatus = document.getElementsByTagName("div");
+          clickStatus[clickStatus.length - 1].remove();
+
+          // console.log(clickStatus);
+          // for (i = 0; i < clickStatus.length; i++) {
+          //   console.log(i);
+          //   div = clickStatus[i];
+          //   console.log(div);
+          //   div.remove();
+          // }
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <h1>JavaScript Sample</h1>
+
+    <p id="my-paragraph">This is a sample paragraph.</p>
+    <button id="my-button">Click me!</button>
+    <button id="my-delete-button">Delete</button>
+    <p id="action-status">Action Status:</p>
+  </body>
+</html>
