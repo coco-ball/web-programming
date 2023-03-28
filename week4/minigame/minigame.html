@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>숫자 맞추기 게임</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>숫자 맞추기 게임</h1>
@@ -10,11 +11,12 @@
     <p>제가 숫자를 맞출 수 있도록 예상한 숫자에 대한 정보를 주세요.</p>
     <form>
       <label for="answer">예상한 숫자: </label>
-      <input type="number" id="answer" name="answer" />
+      <input type="number" id="answer" name="answer" min="1" , max="100" />
       <input type="button" value="확인" onclick="checkAnswer()" />
     </form>
     <p id="hint"></p>
     <p id="count"></p>
+    <p id="history"></p>
     <script src="main.js"></script>
   </body>
 </html>
