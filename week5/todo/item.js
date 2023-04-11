@@ -1,3 +1,5 @@
+//투두 항목 하나
+
 class TodoItem {
   constructor(title, dueDate) {
     this.title = title; // 할 일 제목

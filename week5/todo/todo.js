@@ -1,3 +1,6 @@
+//투두 리스트라는 객체를 관리
+
+// import한 class - 객체로 만들어 써야 함
 import TodoItem from "./item.js";
 
 // To-Do 항목 관리 모듈 정의
@@ -14,16 +17,16 @@ const todoList = {
 
   // 항목을 삭제하는 메소드
   remove(item) {
-    const index = this.items.indexOf(item);
-    if (index !== -1) {
-      this.items.splice(index, 1);
+    const index = this.items.indexOf(item); //인덱스 찾고
+    if (index !== -1) { //리스트가 비어있지 않으면
+      this.items.splice(index, 1); //제거
       this.save(); // 로컬 스토리지에 항목 리스트 저장
     }
   },
 
   // 항목의 완료 여부를 토글하는 메소드
   toggleComplete(item) {
-    item.toggleComplete();
+    item.toggleComplete(); //item.js에서 가져온 함수를 씀
     this.save(); // 로컬 스토리지에 항목 리스트 저장
   },
 
@@ -37,7 +40,7 @@ const todoList = {
     //     [[Prototype]]: Array(0)
     // console.log(JSON.stringify(this.items));
     //     [{ title: "abc", dueDate: "2023-04-12", completed: false }];
-    localStorage.setItem("todoList", JSON.stringify(this.items));
+    localStorage.setItem("todoList", JSON.stringify(this.items)); //텍스트화
   },
 
   // To-Do 항목 리스트를 로컬 스토리지에서 불러오는 메소드
